@@ -91,7 +91,7 @@ while True:
     if event == sg.WIN_CLOSED or event == 'Exit':
         break
     
-    frame = cv2.imread("mateus filipe tavares carvalho.png")
+    frame = cv2.imread("1.png")
     
     if values["-THRESH-"]:
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2LAB)[:, :, 0]
