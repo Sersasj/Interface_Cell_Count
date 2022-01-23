@@ -24,7 +24,7 @@ linha_colorida = [(0,255,255),(255,255,0),(0,255,0),(0,0,255),(205,90,106),
 
 linha_cinza = [(0,0,0),(0,0,0)]
 
-img = cv.imread('1.jpg')
+img = cv.imread('2.jpg')
 
 img_c = cv.imread('1.jpg',0)
 
@@ -48,6 +48,7 @@ def desenho_livre(evento,x,y,flags,param):
         if desenho == True:
             cv.line(img_copia, (ix,iy), (x,y), linha_colorida[troca_cor], 6)
             cv.line(fundo_branco, (ix,iy), (x,y), linha_cinza[troca_cor], 6)
+            # faz a elipse
             #ix, iy = x, y
             
 
@@ -74,7 +75,7 @@ while True:
         break
 
     elif k == ord('s'):
-        cv.imwrite('1_mask.jpg', fundo_branco)
+        cv.imwrite('2_mask.jpg', fundo_branco)
 
     elif k == ord('='):
         tam_bola+=1   
