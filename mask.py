@@ -6,11 +6,13 @@ Created on Mon Jan 17 14:23:43 2022
 """
 
 import cv2 as cv
-
+from scipy import ndimage, misc
 import numpy as  np
 import cv2 as cv
 from skimage.segmentation import watershed
 import skimage.morphology as mm
+from PIL import Image
+import matplotlib.pyplot as plt
 
 desenho = False
 
@@ -28,7 +30,7 @@ img = cv.imread('1.jpg')
 
 img_c = cv.imread('1.jpg',0)
 
-
+imgplot = plt.imshow(img)
 img_copia = img.copy()
 
 fundo_branco = np.zeros(img.shape[:2],dtype=np.int32)
@@ -75,7 +77,7 @@ while True:
         break
 
     elif k == ord('s'):
-        cv.imwrite('1_mask.jpg', fundo_branco)
+        cv.imwrite('50_mask.jpg', fundo_branco)
 
     elif k == ord('='):
         tam_bola+=1   
